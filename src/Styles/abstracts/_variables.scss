@@ -1,0 +1,17 @@
+:root {
+  --column-width-min: 4rem;
+  --column-width-max: 1fr;
+}
+$font-size: (28px, 26px, 22px, 18px, 16px, 14px);
+/* ================ Border radius ================ */
+$form-item-sm: 32px;
+$form-item-md: 38px;
+$form-item-lg: 42px;
+/* ================  Tab height ================ */
+$tab-nav-sm: 40px;
+$tab-nav-md: 50px;
+$tab-nav-lg: 60px;
+/* ================  Tab height ================ */
+/* ================ Border and lines ================ */
+$line: solid 1px theme-colors('grays', 'gray-1');
+$border: solid 1px theme-colors('grays', 'gray-2');

@@ -1,0 +1,35 @@
+@import '../../../Styles/controls';
+
+.addTemplatePropertiesWrapper {
+  @extend %flex-column;
+  padding: 1rem;
+  .addTemplatePropertiesList {
+    @extend %flex-column;
+    @include row-gap(1rem);
+    li {
+      @extend %flexbox;
+      @include column-gap(1rem);
+      &.nestedProperty {
+        overflow: hidden;
+        padding-left: 10px;
+        animation: sub-view-anim 0.3s forwards;
+      }
+      .templateRadioGroup {
+        @extend %flexbox;
+        @extend %item-center;
+        @include column-gap(4px);
+      }
+    }
+  }
+}
+
+@keyframes sub-view-anim {
+  from {
+    max-height: 0px;
+    opacity: 0;
+  }
+  to {
+    max-height: 60px;
+    opacity: 1;
+  }
+}

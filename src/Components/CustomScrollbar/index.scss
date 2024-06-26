@@ -1,0 +1,55 @@
+@import '../../Styles/controls';
+.simplebar-block {
+  flex: 1 1 auto;
+  @extend %flex-column;
+  .simplebar-wrapper {
+    flex: 1 1 auto;
+    margin: 0;
+    padding: 0;
+    @extend %flex-column;
+    .simplebar-mask {
+      flex: 1 1 auto;
+      @extend %flex-column;
+      .simplebar-offset {
+        flex: 1 1 auto;
+        @extend %flex-column;
+        .simplebar-content-wrapper {
+          flex: 1 1 auto;
+          @extend %flex-column;
+          .simplebar-content {
+            padding: 0 !important;
+            flex: 1 1 auto;
+            @extend %flex-column;
+          }
+        }
+      }
+    }
+  }
+  .simplebar-track {
+    background-color: transparent;
+    z-index: 0;
+    @extend %isIn;
+    @include border-radius(50px);
+    .simplebar-scrollbar {
+      background-color: #d6e0e9;
+      @include border-radius(50px);
+      @include transform(translate(0, 0));
+    }
+    &.simplebar-vertical {
+      height: 100%;
+      width: 2px;
+    }
+    &.simplebar-horizontal {
+      width: 100%;
+      height: 2px;
+      max-width: fit-content;
+    }
+  }
+  .pdf-aside-scroll {
+    max-height: calc(100vh - 270px);
+    @include flex(1, 1, auto);
+  }
+  .pdf-body-scroll {
+    max-height: calc(100vh - 240px);
+  }
+}

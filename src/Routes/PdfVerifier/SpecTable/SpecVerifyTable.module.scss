@@ -1,0 +1,7 @@
+@import '../../../Styles/controls';
+
+.spaceWrapper {
+  @include flex(0, 1, auto);
+  @include row-gap(1rem);
+  @extend %flex-column;
+}

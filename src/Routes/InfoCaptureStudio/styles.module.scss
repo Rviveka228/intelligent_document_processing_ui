@@ -1,0 +1,203 @@
+@import '../../Styles/controls';
+.captureStudio {
+  @include flex(0, 1, auto);
+  @include row-gap(1rem);
+  @extend %flex-column;
+  .captureContent {
+    display: grid;
+    grid-template-columns: 550px 1fr;
+    grid-template-rows: 1fr;
+    .captureAside {
+      border-right: $line;
+      @include row-gap(1rem);
+      @extend %flex-column;
+      .keyValueblock {
+        padding: 1rem;
+        @extend %isIn;
+        @extend %flex-column;
+      }
+      .tablesBlock {
+        padding: 1rem;
+        @extend %isIn;
+        @extend %flex-column;
+      }
+      .queryBlock {
+        @include row-gap(1rem);
+        @include flex(1, 1, auto);
+        padding: 1rem;
+        @extend %isIn;
+        @extend %flex-column;
+        .queryAdd {
+          @include column-gap(1rem);
+          @extend %flexbox;
+          @extend %item-center;
+          &__item {
+            @include flex(0, 1, auto);
+            @extend %flex-column;
+            &:first-child {
+              @include flex(1, 1, auto);
+            }
+          }
+        }
+        .queryEmptstate {
+          @include flex(1, 1, auto);
+          @extend %flex-column;
+          @extend %all-center;
+          p {
+            color: theme-colors('grays', 'gray-7');
+          }
+        }
+      }
+      h4 {
+        font-size: 16px;
+        font-weight: 500;
+        color: theme-colors('grays', 'gray-7');
+      }
+      .captureList {
+        position: relative;
+        @include row-gap(0.5rem);
+        @extend %flex-column;
+        li {
+          @extend %radius-md;
+          @extend %flex-column;
+        }
+      }
+
+      .entryWrapper {
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        border: $line;
+        @extend %flex-column;
+        @extend %isIn;
+        .tableDetailsBlock {
+          @include row-gap(0.75rem);
+          @extend %flex-column;
+          .tableDetailsHeading {
+            @include column-gap(0.75rem);
+            @extend %flexbox;
+            @extend %item-center;
+            @extend %justify-between;
+            .tableHeadingText {
+              @include column-gap(0.75rem);
+              @extend %flexbox;
+              @extend %item-center;
+              h4 {
+                font-size: 16px;
+                font-weight: 600;
+                color: theme-colors('grays', 'gray-8');
+              }
+              span {
+                min-width: 20px;
+                max-width: 20px;
+                min-height: 20px;
+                max-width: 20px;
+                @extend %flexbox;
+                @extend %all-center;
+              }
+              h5 {
+                font-size: 14px;
+                font-weight: 600;
+                color: theme-colors('functional', 'success');
+              }
+            }
+          }
+          .multiEntry {
+            @include row-gap(0.75rem);
+            @include column-gap(0.75rem);
+            @extend %flexbox;
+            @extend %item-center;
+            @extend %item-wrap;
+            li {
+              position: relative;
+              height: 24px;
+              border: $line;
+              line-height: 23px;
+              font-size: 13px;
+              padding: 0.25rem 0.5rem 0.25rem 1.5rem;
+              @extend %radius-full;
+              &:not(:last-child) {
+                position: relative;
+                color: theme-colors('grays', 'gray-6');
+                &:before {
+                  position: absolute;
+                  top: 50%;
+                  left: 10px;
+                  content: '';
+                  width: 6px;
+                  height: 6px;
+                  background-color: theme-colors('secondary', 'base', 0.5);
+                  @extend %radius-round;
+                  @include transform(translateY(-50%));
+                }
+              }
+              &:last-child {
+                padding: 0.25rem 0.5rem;
+                @extend %flexbox;
+                @extend %all-center;
+              }
+              span {
+                @include flex(0, 0, auto);
+                min-height: 8px;
+                max-height: 8px;
+                min-width: 16px;
+                max-width: 16px;
+                text-align: center;
+                vertical-align: top;
+                @extend %flexbox;
+                @extend %all-center;
+                svg {
+                  min-width: 16px;
+                  path {
+                    fill: theme-colors('grays', 'gray-4');
+                  }
+                }
+              }
+            }
+          }
+        }
+        &:hover {
+          @extend %isIn;
+          background-color: theme-colors('grays', 'gray-1', 0.5);
+        }
+      }
+    }
+    .captureBody {
+      overflow: hidden;
+      padding: 1rem 0;
+      background-color: theme-colors('grays', 'gray-0');
+      @include row-gap(1.5rem);
+      @extend %radius-md;
+      @extend %flex-column;
+      &__header {
+        padding-inline: 1rem;
+        @extend %flexbox;
+        @extend %item-center;
+        .captureSelect {
+          min-width: 280px;
+        }
+      }
+      &__body {
+        @extend %flex-column;
+      }
+    }
+  }
+}
+.mapmodelWrapper {
+  min-height: 200px;
+  @include flex(1, 1, auto);
+  @extend %flex-column;
+  @include row-gap(1.5rem);
+  .mapmodelBlock {
+    @extend %flex-column;
+    @include row-gap(0.5rem);
+    h5 {
+      font-size: 14px;
+      font-weight: 600;
+      color: theme-colors('grays', 'gray-7');
+    }
+  }
+}
+.mapScrollerpane {
+  @include flex(1, 1, auto);
+  max-height: calc(100vh - 300px);
+}

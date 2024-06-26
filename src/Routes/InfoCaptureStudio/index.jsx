@@ -1,0 +1,1 @@
+export {InfoCaptureStudio} from './InfoCaptureStudio';

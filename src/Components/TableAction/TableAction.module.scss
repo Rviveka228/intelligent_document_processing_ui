@@ -1,0 +1,42 @@
+@import '../../Styles/controls';
+.actionsBlock {
+  @include flex(1, 1, auto);
+  @include column-gap(1rem);
+  @extend %flexbox;
+  @extend %item-center;
+  li {
+    cursor: pointer;
+    @include flex(0, 0, auto);
+    @extend %flexbox;
+    @extend %all-center;
+    span {
+      min-width: 18px;
+      min-height: 18px;
+      max-width: 18px;
+      max-height: 18px;
+      @include flex(1, 1, auto);
+    
+      @extend %flexbox;
+      @extend %all-center;
+      svg {
+        width: 100%;
+        path {
+          fill: theme-colors('grays', 'gray-6');
+        
+        }
+      }
+    }
+    &:hover {
+    
+      span {
+      
+        svg {
+        
+          path {
+            fill: theme-colors('primary', 'base');
+          }
+        }
+      }
+    }
+  }
+}

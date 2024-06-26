@@ -1,0 +1,6 @@
+@import '../../../Styles/controls';
+.cardBody {
+  padding: 1rem;
+  flex: 1 1 auto;
+  @extend %flex-column;
+}

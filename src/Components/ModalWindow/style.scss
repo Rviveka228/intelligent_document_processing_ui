@@ -1,0 +1,95 @@
+@import '../../Styles/controls';
+.ant-modal-wrap {
+  height: 100vh;
+  overflow: hidden;
+  background-color: theme-colors('grays', 'gray-9', 0.5);
+  @include animation('fadeIn 0.8s');
+  @include keyframes(fadeIn) {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+  .ant-modal {
+    max-width: 90%;
+    overflow: hidden;
+    padding-bottom: 0;
+    .ant-modal-content {
+      @include flex(1, 1, auto);
+      padding: 2rem;
+      outline: 0;
+      @include row-gap(1rem);
+      overflow: hidden;
+      @extend %radius-md;
+      @extend %flex-column;
+      .ant-modal-close {
+        cursor: pointer;
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        z-index: 99;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        @include transform(translate(-50%, 0));
+        @extend %flexbox;
+        @extend %all-center;
+        .ant-modal-close-x {
+          @include flex(0, 0, auto);
+          line-height: 20px !important;
+          width: auto !important;
+          height: auto !important;
+          .anticon {
+            font-size: 16px;
+            color: theme-colors('grays', 'gray-8');
+
+            &:hover {
+              color: theme-colors('grays', 'gray-8');
+            }
+          }
+        }
+      }
+      .ant-modal-header,
+      .ant-modal-body,
+      .ant-modal-footer {
+        border: 0;
+        margin: 0;
+        padding: 0;
+      }
+      .ant-modal-header {
+        @include flex(0, 1, auto);
+        @extend %flexbox;
+        @extend %item-center;
+        .ant-modal-title {
+          font-size: 18px;
+          font-weight: 500;
+          padding-right: 50px;
+          color: theme-colors('grays', 'gray-8');
+        }
+      }
+      .ant-modal-body {
+        @include flex(1, 1, auto);
+        @extend %flex-column;
+        @extend %justify-center;
+        .model-content-scroll {
+          max-height: calc(100vh - 222px);
+        }
+        .ant-modal-confirm-btns {
+          padding: 20px 0;
+          @include flexbox();
+          @include flex-direction(row);
+          @include justify-content(center);
+          @include align-items(center);
+        }
+      }
+      .ant-modal-footer {
+        @include flex(0, 1, auto);
+        @extend %flexbox;
+        @extend %justify-end;
+      }
+    }
+  }
+}

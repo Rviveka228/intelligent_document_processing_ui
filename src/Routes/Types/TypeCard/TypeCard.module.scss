@@ -1,0 +1,158 @@
+@import '../../../Styles/controls';
+
+.fieldCard {
+  @include flex(1, 1, auto);
+  @extend %flex-column;
+  @include row-gap(1rem);
+  padding: 1rem;
+  h3 {
+    font-size: 16px;
+    font-weight: 500;
+    color: theme-colors('primary', 'dark');
+  }
+  .fieldBlock {
+    @extend %flex-column;
+    .fieldLists {
+      gap: 0.5rem;
+      @extend %flexbox;
+      @extend %item-wrap;
+      padding: 0.5rem;
+      li {
+        @include flex(0, 0, auto);
+        gap: 0.5rem;
+        padding: 0.5rem;
+        border: $line;
+        @extend %radius-sm;
+        @extend %isIn;
+        @extend %flexbox;
+        @extend %all-center;
+
+        p {
+          font-size: 13px;
+          text-align: center;
+          font-weight: 600;
+          color: theme-colors('grays', 'gray-8');
+          @extend %isIn;
+        }
+      }
+      .viewMore {
+        cursor: pointer;
+        font-size: 13px;
+        text-align: center;
+        font-weight: 600;
+        color: theme-colors('grays', 'gray-7');
+        @extend %isIn;
+        align-self: center;
+      }
+    }
+  }
+}
+.documentCard {
+  cursor: pointer;
+  padding: 1rem;
+  @include flex(1, 1, auto);
+  @extend %flex-column;
+  .documentBlock {
+    @extend %flex-column;
+    .documentIcon {
+      @extend %flex-column;
+      @extend %all-center;
+      span {
+        overflow: hidden;
+        min-width: 60px;
+        min-height: 60px;
+        max-width: 60px;
+        max-height: 60px;
+        @include flex(1, 1, auto);
+        @extend %flex-column;
+        @extend %all-center;
+        @extend %radius-full;
+        svg {
+          width: 40%;
+          path {
+            fill: theme-colors('secondary', 'base');
+          }
+        }
+      }
+    }
+    .documentContent {
+      @include flex(1, 1, auto);
+      @include row-gap(1.5rem);
+      @extend %flex-column;
+      .contentHeading {
+        @include row-gap(0.5rem);
+        @extend %flex-column;
+        @extend %all-center;
+        h3 {
+          font-size: 16px;
+          text-align: center;
+          font-weight: 500;
+          color: theme-colors('primary', 'dark');
+        }
+        .documentUpdated {
+          @include column-gap(0.5rem);
+          @extend %flexbox;
+          @extend %item-center;
+          span {
+            font-weight: 500;
+            color: theme-colors('grays', 'gray-5');
+            @include flex(0, 0, auto);
+            &:last-child {
+              font-weight: 600;
+              color: theme-colors('grays', 'gray-7');
+            }
+          }
+        }
+      }
+
+      .createdDate {
+        @include column-gap(0.5rem);
+        @include row-gap(0.5rem);
+        @extend %flexbox;
+        @extend %item-center;
+        @extend %item-wrap;
+        li {
+          padding: 0.5rem;
+          border: $line;
+          @include flex(1, 1, auto);
+          @include column-gap(0.75rem);
+          @extend %radius-md;
+          @extend %flexbox;
+          @extend %all-center;
+          &:not(:last-child) {
+            border: $line;
+          }
+          .createdText {
+            @extend %flex-column;
+            @include row-gap(0.225rem);
+            span {
+              font-weight: 500;
+              font-size: 12px;
+              color: theme-colors('grays', 'gray-5');
+              @include flex(0, 0, auto);
+              &:last-child {
+                font-weight: 600;
+                color: theme-colors('grays', 'gray-7');
+              }
+            }
+          }
+
+          .createdIcon {
+            min-width: 20px;
+            min-height: 20px;
+            max-width: 20px;
+            max-height: 20px;
+            @extend %flex-column;
+            @extend %all-center;
+            svg {
+              width: 20px;
+              path {
+                fill: theme-colors('grays', 'gray-4');
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

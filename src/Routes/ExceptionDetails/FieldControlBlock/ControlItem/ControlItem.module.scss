@@ -1,0 +1,54 @@
+@import '../../../../Styles/controls';
+.controlItem {
+  border: $line;
+  padding: 1rem;
+  @extend %flex-column;
+  @extend %radius-sm;
+
+  .controlErrorStatus {
+    display: flex;
+    justify-content: flex-end;
+    .controlFailure {
+      background-color: #d63e39;
+    }
+    .controlSuccess {
+      background-color: #368541;
+    }
+    .controlFailure,
+    .controlSuccess {
+      padding: 4px 6px;
+      border-radius: 14px;
+      color: hsl(0deg 0% 95%);
+      font-size: 0.75rem;
+      @extend %flexbox;
+      @extend %all-center;
+    }
+  }
+
+  .controlElement {
+    min-width: calc(50% - 0.25rem);
+    padding-block: 0.75rem;
+    @include flex(1, 1, auto);
+    @extend %flexbox;
+    @extend %item-center;
+    @extend %justify-between;
+
+    &:not(:last-child) {
+      border-bottom: $border;
+    }
+    label {
+      min-width: 50%;
+      font-size: 0.85rem;
+      color: theme-colors('grays', 'gray-8');
+      @include flex(1, 1, auto);
+    }
+    span {
+      text-align: right;
+      color: theme-colors('grays', 'gray-6');
+      font-weight: 500;
+      font-size: 0.85rem;
+      @include flex(1, 1, auto);
+      @extend %break-text;
+    }
+  }
+}

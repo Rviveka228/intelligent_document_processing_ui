@@ -1,0 +1,31 @@
+@import '../../Styles/controls';
+.mainNavigation {
+  @extend %flex-column;
+  @extend %isIn;
+  .navigationList {
+    flex: 1 1 auto;
+    column-gap: 1.5rem;
+    cursor: pointer;
+    @extend %flexbox;
+    @extend %item-center;
+    li {
+      flex: 1 1 auto;
+      @extend %flex-column;
+      a {
+        flex: 1 1 auto;
+        font-size: 1rem;
+        font-weight: 400;
+        color: theme-colors('primary', 'dark');
+        @extend %isIn;
+        &[class~='active'] {
+          color: theme-colors('secondary', 'base');
+          font-weight: 500;
+        }
+        &:hover {
+          opacity: 1;
+          @extend %isIn;
+        }
+      }
+    }
+  }
+}

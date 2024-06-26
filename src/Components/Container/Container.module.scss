@@ -1,0 +1,30 @@
+@import '../../Styles/controls';
+.container,
+.containerFluid {
+  flex: 1 1 auto;
+  position: relative;
+  margin: 0 auto;
+  width: calc(100% - 2rem);
+  padding: 0 1rem;
+  @extend %flex-column;
+}
+.container {
+  margin: 0 auto;
+  padding: 0 1rem;
+  max-width: 100%;
+  @include media('>=tablet') {
+    max-width: 100%;
+  }
+  @include media('>=desktop') {
+    max-width: 960px;
+  }
+  @include media('>=1200px') {
+    max-width: 1140px;
+  }
+  @include media('>=1400px') {
+    max-width: 1320px;
+  }
+  @include media('>=1600px') {
+    max-width: 1560px;
+  }
+}

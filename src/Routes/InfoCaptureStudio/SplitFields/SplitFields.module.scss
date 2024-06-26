@@ -1,0 +1,61 @@
+@import '../../../Styles/controls';
+.splitWrapper {
+  padding: 1rem;
+  grid-column: 2 / span 1;
+  border-left: $line;
+  @extend %flex-column;
+  @include row-gap(1.5rem);
+  .splitHeader {
+    @extend %flexbox;
+    @extend %item-center;
+    @extend %justify-between;
+    &__item {
+      @include flex(0, 1, auto);
+    }
+  }
+  .splitContent {
+    max-height: 500px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    @extend %flex-column;
+    @include row-gap(1rem);
+    @extend %scrollbar-sm;
+    .splitElements {
+      display: flex;
+      flex-direction: column;
+      @include row-gap(0.35rem);
+      &__top {
+        display: grid;
+        grid-template-columns: 1fr 1fr 100px;
+        grid-template-rows: 1fr;
+        @include column-gap(1rem);
+        .splitField {
+          @extend %flex-column;
+          .splitControls {
+            @extend %flexbox;
+            @include column-gap(1rem);
+            .splitButton {
+              min-width: 40px;
+              max-width: 40px;
+              min-height: 40px;
+              max-height: 40px;
+              width: 40px;
+              @extend %flexbox;
+              @extend %all-center;
+              border-radius: 50%;
+            }
+          }
+        }
+      }
+      &__bottom {
+        color: hsl(0deg 0% 50%);
+        font-style: italic;
+      }
+    }
+  }
+  .splitSubmit {
+    @extend %flexbox;
+    @extend %item-center;
+    @extend %justify-end;
+  }
+}

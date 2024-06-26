@@ -1,0 +1,5 @@
+@import '../../Styles/controls';
+.pageBody {
+  flex: 1 1 auto;
+  @extend %flex-column;
+}

@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com');
+@import url('https://fonts.gstatic.com');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import '../constants/color';
+$font-web: 'Inter', sans-serif;
+@mixin generatorText($size, $weight) {
+  font-size: #{$size}rem;
+  font-weight: $weight;
+}
+$font-size: (40px, 36px, 30px, 22px, 16px, 13px);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+@for $i from 1 through 6 {
+  h#{$i} {
+    font-size: nth($font-size, $i);
+  }
+}
+p {
+  margin: 0;
+  padding: 0;
+  line-height: 22px;
+}
+em {
+  font-weight: 500;
+}
+a {
+  text-decoration: none;
+  [disabled] {
+    cursor: not-allowed;
+    pointer-events: all;
+  }
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}

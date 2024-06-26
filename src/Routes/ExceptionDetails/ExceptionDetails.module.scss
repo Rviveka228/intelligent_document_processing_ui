@@ -1,0 +1,39 @@
+@import '../../Styles/controls';
+
+.exceptionDetails {
+  @extend %flex-column;
+  @include row-gap(1rem);
+  .exceptionBody {
+    @extend %flex-column;
+    @include media('>=desktop') {
+      display: grid;
+      grid-template-columns: 400px 1fr;
+      grid-template-rows: 1fr;
+      @include column-gap(2rem);
+    }
+    .exceptionSidebar,
+    .exceptionContent {
+      @include row-gap(2rem);
+      @extend %flex-column;
+      &__header {
+        padding-top: 1.5rem;
+        @extend %flex-column;
+      }
+      &__body {
+        overflow-x: hidden;
+        overflow-y: auto;
+        max-height: calc(100vh - 200px);
+        @include row-gap(1rem);
+        @extend %flex-column;
+        @extend %scrollbar-sm;
+        .pdfBlock {
+          @extend %flex-column;
+        }
+      }
+    }
+  }
+  .submitBlock {
+    @extend %flex-column;
+    @extend %justify-end;
+  }
+}

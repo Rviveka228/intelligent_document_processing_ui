@@ -1,0 +1,27 @@
+@import '../../../Styles/controls';
+.cardFooter {
+  padding: 0 1rem 1rem 1rem;
+  @extend %flex-column;
+  @extend %all-center;
+  @include media('>992px') {
+    @include flex-direction(row);
+    @include justify-content(flex-end);
+    @include align-items(center);
+    button {
+      flex: 0 0 auto;
+      min-width: 80px;
+      &:not(:last-child) {
+        margin-bottom: 0 !important;
+        margin-right: 1rem !important;
+      }
+    }
+  }
+  button {
+    flex: 0 0 auto;
+    min-width: 80px;
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+      margin-right: 0;
+    }
+  }
+}

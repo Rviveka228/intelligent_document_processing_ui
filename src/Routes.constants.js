@@ -1,0 +1,16 @@
+export const ROUTE = {
+  ROOT: '/',
+  HOME: '/home',
+  CAPTURE_STUDIO: '/capture-studio',
+  EDIT_CAPTURE_STUDIO: '/capture-studio/:templateId',
+  TEMPLATES: '/templates',
+  EXCEPTION_ZONE: '/exception-zone',
+  ADMIN_SETTINGS: '/admin-settings',
+  TYPES: '/document-types',
+  CREATE_TYPES: '/document-types/create',
+  EDIT_CREATE_TYPES: '/document-types/create/:documentId',
+  EXCEPTION_DETAILS: '/exception-zone/:configId',
+  REPEATED_ENTITIES: '/repeated-entities',
+  LOGIN: '/login',
+  USERS: '/users',
+};

@@ -1,0 +1,9 @@
+@import '../../Styles/controls';
+.loaderBlock {
+  @include flex(1, 1, auto);
+  @extend %flex-column;
+  @extend %all-center;
+  .loadingtext {
+    font-size: 16px;
+  }
+}

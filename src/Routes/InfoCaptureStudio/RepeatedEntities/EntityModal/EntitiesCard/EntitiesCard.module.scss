@@ -1,0 +1,9 @@
+@import '../../../../../Styles/controls';
+.entryList {
+  @include row-gap(1rem);
+  @extend %flex-column;
+  li {
+    @extend %flex-column;
+    @include row-gap(0.25rem);
+  }
+}

@@ -1,0 +1,66 @@
+@import '../../../../Styles/controls';
+.entityWrapper {
+  padding: 1rem;
+  overflow-y: auto;
+  @include row-gap(4px);
+  @extend %scrollbar-md;
+  @extend %flex-column;
+  .entityHeader {
+    @extend %flex-column;
+  }
+  .entityContent {
+    @include row-gap(1rem);
+    @extend %flex-column;
+    .entityCaption {
+      border: $border;
+      padding: 1rem;
+      @include row-gap(0.5rem);
+      @extend %flex-column;
+      @extend %radius-md;
+    }
+    .entityForms {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 1fr;
+      @include row-gap(0.5rem);
+      @include column-gap(0.5rem);
+      .entityCard {
+        padding: 1.5rem;
+        position: relative;
+        border: $border;
+        @extend %flex-column;
+        @extend %radius-md;
+        .deleteButton {
+          position: absolute;
+          right: 8px;
+          top: 8px;
+          min-width: 14px;
+          max-width: 14px;
+          min-height: 14px;
+          max-height: 14px;
+          svg {
+            width: 70%;
+          }
+        }
+      }
+      .entityAdd {
+        padding: 1rem;
+        min-height: 180px;
+        border: $border;
+        @extend %flex-column;
+        @extend %all-center;
+        @extend %radius-md;
+        .addButton {
+          min-width: 40px;
+          max-width: 40px;
+          min-height: 40px;
+          max-height: 40px;
+        }
+      }
+    }
+    .cardItemControl {
+      @extend %flexbox;
+      @extend %justify-end;
+    }
+  }
+}

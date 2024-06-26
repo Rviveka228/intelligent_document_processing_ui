@@ -1,0 +1,9 @@
+@import '../../../Styles/controls';
+.blockWrapper {
+  @extend %flex-column;
+  padding: 0.5rem;
+  .blockInput {
+    @include flex(1, 1, auto);
+    padding: 1rem;
+  }
+}

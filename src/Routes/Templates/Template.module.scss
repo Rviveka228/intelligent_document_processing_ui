@@ -1,0 +1,52 @@
+@import '../../Styles/controls';
+.templateWrapper {
+  @include flex(1, 1, auto);
+  @include row-gap(1rem);
+  @extend %flex-column;
+  .templeteBlock {
+    @include row-gap(1rem);
+    @extend %flex-column;
+    .templeteList {
+      @include flex(0, 1, auto);
+      @extend %flex-column;
+      @include row-gap(1rem);
+      @include media('>=tablet') {
+        display: grid;
+        grid-template-rows: 1fr;
+        @include row-gap(1rem);
+        @include column-gap(1rem);
+        grid-template-columns: repeat(auto-fill, calc(50% - 0.75rem));
+      }
+      @include media('>=desktop') {
+        display: grid;
+        grid-template-rows: 1fr;
+        @include row-gap(1rem);
+        @include column-gap(1rem);
+        grid-template-columns: repeat(auto-fill, calc(33.333% - 0.75rem));
+      }
+      @include media('>=1200px') {
+        display: grid;
+        grid-template-rows: 1fr;
+        @include row-gap(1rem);
+        @include column-gap(1rem);
+        grid-template-columns: repeat(auto-fill, calc(25% - 0.75rem));
+      }
+    }
+    .templetePagination {
+      @extend %flexbox;
+      @extend %item-center;
+      @extend %justify-end;
+    }
+  }
+  .templateFilter {
+    @include column-gap(1rem);
+    @extend %flexbox;
+    li {
+      @include flex(0, 1, auto);
+      @extend %flex-column;
+      &:first-child {
+        height: 20px;
+      }
+    }
+  }
+}

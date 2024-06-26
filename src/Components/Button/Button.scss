@@ -1,0 +1,180 @@
+@import '../../Styles/controls';
+.ant-btn {
+  text-align: center;
+  border: $border;
+  min-width: 80px;
+  font-size: 14px !important;
+  height: $form-item-md;
+  @include column-gap(0.25rem);
+  @extend %isIn;
+  @extend%radius-sm;
+  @extend %flexbox;
+  @extend %all-center;
+  @include media('>=desktop') {
+    height: $form-item-md;
+    min-width: 80px;
+  }
+  &:not(:last-child) {
+    margin-right: 0;
+  }
+  span {
+    flex: 0 0 auto;
+    &:empty {
+      display: none;
+    }
+
+    &.button-text-block {
+      flex: 1 1 auto;
+      @extend %flexbox;
+    }
+  }
+
+  .ant-btn-icon {
+    margin: 0;
+    margin-inline-end: 0 !important;
+    width: 16px;
+    height: 16px;
+    overflow: hidden;
+    @extend %flexbox;
+    @extend %all-center;
+    svg {
+      width: 100%;
+      height: 100%;
+      path {
+        fill: theme-colors('primary', 'base');
+        @extend %isIn;
+      }
+    }
+  }
+  &.ant-btn-sm {
+    height: $form-item-sm;
+    font-size: 12px;
+    min-width: auto;
+    padding: 0.25rem 0.75rem;
+    @extend%radius-full;
+    @include media('>=desktop') {
+      height: $form-item-sm;
+    }
+    span {
+      flex: 0 0 auto;
+      &:not(:last-child) {
+        width: 14px;
+        height: 14px;
+        @extend %isIn;
+      }
+    }
+  }
+  &.ant-btn-lg {
+    font-size: 14px;
+    height: $form-item-lg;
+    min-width: 100px;
+    padding: 0.25rem 1rem;
+    @extend%radius-full;
+    @include media('>=desktop') {
+      padding: 0.75rem 1.5rem;
+      height: $form-item-lg;
+    }
+    span {
+      flex: 0 0 auto;
+      &:not(:last-child) {
+        width: 20px;
+        height: 20px;
+        @extend %isIn;
+      }
+    }
+  }
+  &.ant-btn-default {
+    background-color: theme-colors('grays', 'gray-0');
+    border: $border;
+    svg {
+      max-width: 14px;
+      min-width: 14px;
+      path {
+        fill: theme-colors('grays', 'gray-4');
+      }
+    }
+    &:not(:disabled):not(.ant-btn-disabled) {
+      color: theme-colors('grays', 'gray-6');
+      border: $border;
+      &:hover {
+        border-color: theme-colors('secondary', 'base') !important;
+        color: theme-colors('secondary', 'base');
+        @extend %isIn;
+        path {
+          fill: theme-colors('secondary', 'base');
+          @extend %isIn;
+        }
+      }
+    }
+  }
+
+  &.ant-btn-primary {
+    border: 0;
+    color: theme-colors('grays', 'gray-0');
+    &:not(:disabled):not(.ant-btn-disabled) {
+      background-color: theme-colors('secondary', 'base');
+      .ant-btn-icon {
+        @extend %isIn;
+        svg {
+          @extend %isIn;
+          path {
+            fill: theme-colors('grays', 'gray-0');
+          }
+        }
+      }
+      &:hover {
+        background-color: theme-colors('secondary', 'dark');
+        color: theme-colors('grays', 'gray-0');
+        @extend %isIn;
+        path {
+          fill: theme-colors('secondary', 'base');
+          @extend %isIn;
+        }
+      }
+    }
+
+    &:disabled,
+    &.ant-btn-disabled {
+      border: $border;
+      background-color: theme-colors('grays', 'gray-1');
+      color: theme-colors('grays', 'gray-4');
+    }
+  }
+  &.ant-btn-danger {
+    border: 0;
+    font-weight: 500;
+    color: theme-colors('grays', 'gray-0');
+    background-color: theme-colors('functional', 'error');
+    span {
+      flex: 0 0 auto;
+      svg {
+        width: 100%;
+        path {
+          fill: theme-colors('grays', 'gray-0');
+        }
+      }
+    }
+  }
+  &.ant-btn-link {
+    border: 0;
+    height: auto;
+    color: theme-colors('primary', 'base');
+    padding: 0;
+    background-color: transparent;
+    color: theme-colors('primary', 'base');
+    &:not(:disabled):not(.ant-btn-disabled) {
+      color: theme-colors('primary', 'base');
+      &:hover {
+        color: theme-colors('secondary', 'base');
+        @extend %isIn;
+        .ant-btn-icon {
+          padding: 0;
+          path {
+            fill: theme-colors('secondary', 'base');
+            @extend %isIn;
+          }
+        }
+      }
+    }
+  }
+}

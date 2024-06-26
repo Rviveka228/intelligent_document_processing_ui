@@ -1,0 +1,36 @@
+.ant-table-wrapper {
+  flex: 1 1 auto;
+}
+.ant-table {
+  background-color: transparent;
+  font-feature-settings: normal !important;
+  font-variant: normal !important;
+  &.ant-table-bordered {
+    outline: 0;
+    .ant-table-container {
+      border-left: 0;
+    }
+  }
+}
+.ant-table-content {
+  max-width: 100%;
+  overflow-y: auto;
+  overflow-x: auto;
+  table {
+    background-color: theme-colors('grays', 'gray-0');
+
+    .ant-table-thead > tr > th,
+    .ant-table-tbody > tr > td {
+      background-color: theme-colors('grays', 'gray-0');
+    }
+    .ant-table-tbody {
+      margin: 0;
+      .ant-table-row {
+        background-color: theme-colors('grays', 'gray-0');
+        .ant-table-cell {
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+@import '../../../../Styles/controls';
+
+.blockTagContent {
+  padding: 0 1rem;
+  @extend %flexbox;
+  @include column-gap(0.5rem);
+  @include row-gap(0.5rem);
+  @extend %item-wrap;
+  li {
+    padding: 0.35rem 1rem;
+    min-width: 40px;
+    background-color: theme-colors('primary', 'base', 0.03);
+    border: solid 1px theme-colors('primary', 'base', 0.2);
+    font-size: 13px;
+    cursor: pointer;
+    font-weight: 400;
+    @extend %break-text;
+    @extend %radius-full;
+    @extend %isIn;
+    @extend %flex-column;
+    @extend %item-center;
+    &:hover {
+      background-color: theme-colors('secondary', 'light');
+      border: solid 1px theme-colors('secondary', 'base', 0.5);
+      @extend %isIn;
+    }
+  }
+}

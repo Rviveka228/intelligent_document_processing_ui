@@ -1,0 +1,1 @@
+export {AllIcons} from './AllIcons';

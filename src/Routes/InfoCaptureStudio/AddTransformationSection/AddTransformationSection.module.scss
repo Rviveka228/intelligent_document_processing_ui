@@ -1,0 +1,73 @@
+@import '../../../Styles/controls';
+
+.tranformationAside {
+  grid-row: 1 / 3;
+  @include row-gap(1rem);
+  @extend %flex-column;
+  padding: 0.5rem;
+  .keyvaultList {
+    position: relative;
+    @extend %flex-column;
+    gap: 1.5rem;
+    li {
+      @extend %radius-md;
+      @extend %flex-column;
+      margin: 0.3rem;
+    }
+  }
+}
+
+.tranformationBody {
+  flex: 1 1 auto;
+  border-left: $line;
+  overflow: hidden;
+  padding: 1rem;
+  background-color: theme-colors('grays', 'gray-0');
+  @extend %radius-md;
+  @extend %flex-column;
+  @include row-gap(1rem);
+  &__values {
+    @extend %flex-column;
+    @include row-gap(0.5rem);
+    .tranformationLoader {
+      @extend %flexbox;
+      width: 300px;
+      height: 73px;
+    }
+    .valuesList {
+      row-gap: 1rem;
+      @extend %flex-column;
+      li {
+        @extend %flexbox;
+        @extend %item-center;
+        column-gap: 1rem;
+        span {
+          color: theme-colors('grays', 'gray-6');
+        }
+        h5 {
+          font-size: 14px;
+          word-break: break-all;
+          max-width: calc(100% - 305px);
+          font-weight: 600;
+          color: theme-colors('grays', 'gray-8');
+        }
+      }
+    }
+  }
+  &__select {
+    @extend %flex-column;
+    max-width: 350px;
+    label {
+      margin: 5px 0;
+    }
+  }
+  &__selectedList {
+    @extend %flex-column;
+    @include row-gap(0.5rem);
+    ul {
+      padding-left: 0.5rem;
+      @extend %flex-column;
+      @include row-gap(0.5rem);
+    }
+  }
+}

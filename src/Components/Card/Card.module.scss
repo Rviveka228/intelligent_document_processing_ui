@@ -1,0 +1,7 @@
+@import '../../Styles/controls';
+.card {
+  background-color: theme-colors('grays', 'gray-0');
+  @extend %flex-column;
+  @extend %radius-md;
+  @extend %shadow-one;
+}

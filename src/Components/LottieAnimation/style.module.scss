@@ -1,0 +1,19 @@
+@import '../../Styles/controls';
+.animateLoader {
+  @include row-gap(0.25rem);
+  @include flex(1, 1, auto);
+  @extend %flex-column;
+  @extend %all-center;
+  &__icon {
+    max-width: 130px;
+    min-width: 130px;
+    @extend %flex-column;
+    @extend %all-center;
+  }
+  p {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: theme-colors('grays', 'gray-7');
+  }
+}

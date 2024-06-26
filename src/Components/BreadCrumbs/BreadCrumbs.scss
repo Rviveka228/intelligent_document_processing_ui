@@ -1,0 +1,49 @@
+@import '../../Styles/controls';
+.ant-breadcrumb {
+  @extend %flex-column;
+  ol {
+    @include flex(1, 1, auto);
+    @include column-gap(0.75rem);
+    @extend %flexbox;
+    li {
+      @include flex(0, 0, auto);
+      cursor: default;
+      @include column-gap(0.5rem);
+      @extend %flexbox;
+      @extend %item-center;
+      &.ant-breadcrumb-separator {
+        @include flex(0, 0, auto);
+        margin: 0;
+        width: 6px;
+        height: auto;
+        font-size: 0;
+        background-image: url(../../Assest/Image/arrow-right.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        @include media('>=desktop') {
+          width: 6px;
+        }
+      }
+      .ant-breadcrumb-link {
+        @include flex(1, 1, auto);
+        font-size: 12px;
+        text-transform: capitalize;
+        cursor: pointer;
+        color: theme-colors('grays', 'gray-8');
+        @include media('>=desktop') {
+          font-size: 12px;
+        }
+        a {
+          background: transparent;
+          @extend %isOut;
+          &:hover {
+            background-color: transparent;
+            color: theme-colors('primary', 'base');
+            @extend %isIn;
+          }
+        }
+      }
+    }
+  }
+}

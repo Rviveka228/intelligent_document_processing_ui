@@ -1,0 +1,24 @@
+@import '../../../Styles/controls';
+
+.forgotForm {
+  @extend %flex-column;
+  .forgotList {
+    @include row-gap(1.5rem);
+    @extend %flex-column;
+    li {
+      @include flex(0, 1, auto);
+      @include row-gap(0.25rem);
+      @extend %flex-column;
+      p {
+        @extend %flexbox;
+        @extend %all-center;
+        @include column-gap(0.5rem);
+        a {
+          color: theme-colors('primary', 'base');
+          font-weight: 600;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

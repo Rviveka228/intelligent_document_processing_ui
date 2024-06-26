@@ -1,0 +1,15 @@
+@import '../../Styles/controls';
+
+.exceptionZone {
+  @extend %flex-column;
+  @include row-gap(1rem);
+  &__content {
+    @extend %flex-column;
+    @include row-gap(3rem);
+    > ul {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+  }
+}

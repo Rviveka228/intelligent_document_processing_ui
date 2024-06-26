@@ -1,0 +1,15 @@
+@import '../../../Styles/controls';
+.documentUpload {
+  @include row-gap(1.5rem);
+  @include flex(1, 1, auto);
+  @extend %flex-column;
+  .uploadfileWrapper {
+    @include flex(1, 1, auto);
+    @extend %flex-column;
+    @extend %all-center;
+  }
+  .uploadfileResult {
+    @include flex(1, 1, auto);
+    @extend %flex-column;
+  }
+}

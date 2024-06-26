@@ -1,0 +1,1 @@
+export { AddTemplateProperties } from './AddTemplateProperties';

@@ -1,0 +1,68 @@
+@import '../../../../Styles/controls';
+.infoCapture {
+  @include flex(1, 1, auto);
+  @extend %flex-column;
+  .captureBlock {
+    @include row-gap(1.5rem);
+    @include flex(1, 1, auto);
+    @extend %flex-column;
+    @extend %all-center;
+    .captureHeader {
+      @include row-gap(0.5rem);
+      @include flex(0, 1, auto);
+      @extend %flex-column;
+      @include media('>=desktop') {
+        min-width: 600px;
+        max-width: 600px;
+      }
+      h3 {
+        font-size: 20px;
+        text-align: center;
+        font-weight: 400;
+        color: theme-colors('grays', 'gray-8');
+      }
+      p {
+        font-size: 14px;
+        font-weight: 400;
+        text-align: center;
+        color: theme-colors('grays', 'gray-6');
+      }
+    }
+    .blockUpload {
+      padding: 1.5rem;
+      @include row-gap(1rem);
+      @include flex(0, 1, auto);
+      @extend %flex-column;
+      @include media('>=desktop') {
+        min-width: 600px;
+      }
+      .blockElement {
+        padding: 1.5rem;
+      }
+      .blockList {
+        @include row-gap(1rem);
+        @extend %flex-column;
+        li {
+          @include flex(0, 0, auto);
+          @extend %flex-column;
+          @extend %all-center;
+          .uploadfileFooter {
+            @include flex(1, 1, auto);
+            @extend %flex-column;
+            @extend %all-center;
+          }
+          .captureForms {
+            @include column-gap(1rem);
+            @extend %flexbox;
+            @extend %item-start;
+            @extend %justify-start;
+            &__item {
+              @extend %flex-column;
+              @extend %item-start;
+            }
+          }
+        }
+      }
+    }
+  }
+}

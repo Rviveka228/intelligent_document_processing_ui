@@ -1,0 +1,35 @@
+@import '../../Styles/controls';
+.pageHeader {
+  @include row-gap(0.5rem);
+  @extend %flex-column;
+  .headerTitle {
+    @extend %flexbox;
+    @extend %item-center;
+    @extend %justify-between;
+    .titleBlock {
+      @include flex(0, 0, auto);
+      @extend %flex-column;
+      h3 {
+        font-size: 20px;
+        color: theme-colors('grays', 'gray-8');
+        font-weight: 500;
+      }
+      p {
+        font-size: 14px;
+        font-weight: 300;
+        color: theme-colors('grays', 'gray-8');
+      }
+    }
+    .titleControls {
+      @include flex(0, 0, auto);
+      @include column-gap(0.5rem);
+      @extend %flexbox;
+      @extend %item-center;
+    }
+  }
+  .headerExtras {
+    font-size: 14px;
+    line-height: 22px;
+    @extend %flex-column;
+  }
+}

@@ -1,0 +1,1 @@
+export {EntitiesCard} from './EntitiesCard';

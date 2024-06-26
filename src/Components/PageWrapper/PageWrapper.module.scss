@@ -1,0 +1,21 @@
+@import '../../Styles/controls';
+.mainWrapper {
+  flex: 1 1 auto;
+  min-height: 100vh;
+  background-image: url(../../Assest/Image/body-bg.png);
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  @extend %flex-column;
+  @extend %page-bg;
+  @include animation('fadeIn 0.8s');
+  @include keyframes(fadeIn) {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+}

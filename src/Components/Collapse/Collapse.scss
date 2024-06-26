@@ -1,0 +1,20 @@
+@import '../../Styles/controls';
+.ant-collapse {
+  border: $line;
+  overflow: hidden;
+  @extend %flex-column;
+  @include box-shadow(0 1px 2px theme-colors('grays', 'gray-9', 0.1));
+  .ant-collapse-item {
+    border-bottom: 0;
+    background-color: theme-colors('grays', 'gray-0');
+    @extend %flex-column;
+    .ant-collapse-header {
+      border: 0;
+      @extend %flexbox;
+      @extend %item-center;
+    }
+    .ant-collapse-content {
+      border-top: $border;
+    }
+  }
+}

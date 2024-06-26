@@ -1,0 +1,17 @@
+@import '../../Styles/controls';
+.checkItemlist {
+  flex: 0 1 auto;
+  gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20%, var(--column-width-max)));
+  li {
+    padding: 0.5rem 1rem;
+    border: $line;
+    @extend %radius-md;
+    @extend %isIn;
+    &:hover {
+      border:$border;
+      @extend %isIn;
+    }
+  }
+}

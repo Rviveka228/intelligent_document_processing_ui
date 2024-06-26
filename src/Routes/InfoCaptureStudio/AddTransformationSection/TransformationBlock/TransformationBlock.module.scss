@@ -1,0 +1,58 @@
+@import '../../../../Styles/controls';
+.transformationBlock {
+  @include row-gap(1rem);
+  @extend %flex-column;
+  h4 {
+    font-size: 16px;
+  }
+  &__forms {
+    @include row-gap(0.25rem);
+    @extend %flex-column;
+    .transformElement {
+      @include column-gap(0.5rem);
+      @extend %flexbox;
+      @extend %item-center;
+      &__block {
+        @extend %flex-column;
+      }
+    }
+  }
+  &__list {
+    @include column-gap(0.5rem);
+    @include row-gap(0.5rem);
+    @extend %flexbox;
+    @extend %item-center;
+    li {
+      @extend %flex-column;
+      .appliedTransform {
+        padding: 0.12rem 0.5rem;
+        border: $border;
+        @extend %flexbox;
+        @extend %item-center;
+        @extend %justify-between;
+        @extend %radius-sm;
+        &__label {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          flex: 1 1 auto;
+        }
+        &__close {
+          width: 20px;
+          height: 20px;
+          @extend %flexbox;
+          @extend %all-center;
+          cursor: pointer;
+          svg {
+            width: 50%;
+            height: 50%;
+          }
+        }
+      }
+    }
+  }
+  &__button {
+    @extend %flexbox;
+    @extend %item-center;
+  }
+}

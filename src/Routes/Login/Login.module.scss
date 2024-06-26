@@ -1,0 +1,154 @@
+@import '../../Styles/controls';
+.loginWrapper {
+  @include flex(1, 1, auto);
+  padding: 2rem;
+  height: calc(100vh - 4rem);
+  background-image: url(../../Assest/Image/login_bg.png);
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  @extend %flex-column;
+  @include animation('fadeIn 0.8s');
+  @include keyframes(fadeIn) {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+  @include media('>desktop') {
+    padding: 6rem;
+    height: calc(100vh - 12rem);
+  }
+  .loginBlock {
+    background-color: theme-colors('grays', 'gray-0');
+    @include flex(1, 1, auto);
+    @extend %radius-xl;
+    @extend %flex-column;
+    @extend %shadow-two;
+    @include media('>desktop') {
+      display: grid;
+      grid-template-columns: 60% 40%;
+      grid-template-rows: 1fr;
+    }
+    .loginTheme {
+      background-color: theme-colors('primary', 'light', 0.1);
+      @include flex(1, 1, auto);
+      @extend %flex-column;
+      .themeBlock {
+        padding: 3rem;
+        @include row-gap(2rem);
+        @include flex(1, 1, auto);
+        @extend %flex-column;
+        @include media('>desktop') {
+          padding: 4rem;
+        }
+        .themeImage {
+          position: relative;
+          @include flex(1, 1, auto);
+          @extend %flex-column;
+          @extend %all-center;
+          img {
+            max-width: 100%;
+          }
+        }
+        .themeContent {
+          display: none;
+          @include flex(1, 1, auto);
+          @include row-gap(12px);
+          @include media('>desktop') {
+            @include flexbox();
+            @include flex-direction(column);
+          }
+          h3 {
+            font-size: 18px;
+            text-align: center;
+            color: theme-colors('grays', 'gray-8');
+          }
+          p {
+            font-size: 14px;
+            text-align: center;
+            color: theme-colors('grays', 'gray-5');
+          }
+        }
+      }
+    }
+    .loginForms {
+      @extend %flex-column;
+      .formsBlock {
+        @include flex(1, 1, auto);
+        @extend %flex-column;
+        @extend %all-center;
+        .formElements {
+          padding: 3rem;
+          width: calc(100% - 4rem);
+          @include row-gap(2rem);
+          @include row-gap(2rem);
+          @extend %flex-column;
+          @include media('>desktop') {
+            padding: 3rem;
+            width: calc(100% - 6rem);
+          }
+          @include media('>1200px') {
+            padding: 5rem;
+            width: calc(100% - 10rem);
+            max-width: 400px;
+          }
+          .elementHeader {
+            @include row-gap(0.75rem);
+            @extend %flex-column;
+            @extend %all-center;
+            .headerBrand {
+              @extend %flex-column;
+              @extend %all-center;
+              span {
+                min-width: 200px;
+                max-width: 200px;
+                @extend %flex-column;
+              }
+            }
+            .headerText {
+              @include row-gap(0.25rem);
+              @extend %flex-column;
+              @extend %all-center;
+              h3 {
+                font-size: 22px;
+                font-weight: 300;
+                text-align: center;
+                color: theme-colors('grays', 'gray-8');
+              }
+              p {
+                font-size: 14px;
+                text-align: center;
+                color: theme-colors('grays', 'gray-5');
+                a {
+                  color: theme-colors('primary', 'base');
+                  font-weight: 600;
+                  cursor: pointer;
+                }
+              }
+            }
+          }
+        }
+      }
+      .formFooter {
+        padding: 2rem;
+        @include flex(0, 1, auto);
+        @extend %flex-column;
+        @extend %all-center;
+        p {
+          @extend %flexbox;
+          @extend %all-center;
+          @include column-gap(0.5rem);
+          a {
+            color: theme-colors('primary', 'base');
+            font-weight: 600;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

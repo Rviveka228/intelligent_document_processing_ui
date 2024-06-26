@@ -1,0 +1,50 @@
+@import '../../../Styles/controls';
+
+.dropZone {
+  @extend %flex-column;
+  @include row-gap(12px);
+  &__list {
+    @extend %flex-column;
+    @include row-gap(8px);
+    > li {
+      padding-left: 8px;
+      @extend %flexbox;
+      @include column-gap(12px);
+      .zoneInputBlock {
+        @extend %flexbox;
+        @include column-gap(4px);
+        .zoneInputItem {
+          @extend %flex-column;
+          @include row-gap(4px);
+        }
+        .dropZoneDocument {
+          max-width: 80px;
+          &[class~='ant-select-loading'] {
+            [class~='ant-select-selection-item'] {
+              color: transparent !important;
+            }
+          }
+        }
+      }
+      .zoneControls {
+        @extend %flexbox;
+        // @extend %item-center;
+        align-items: flex-end;
+        padding-bottom: 4px;
+        @include column-gap(4px);
+        min-width: 68px;
+        > button {
+          min-width: 32px;
+          min-height: 32px;
+          max-width: 32px;
+          max-height: 32px;
+          border-radius: 50%;
+          svg {
+            width: 90%;
+            height: 90%;
+          }
+        }
+      }
+    }
+  }
+}

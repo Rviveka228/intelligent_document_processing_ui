@@ -1,0 +1,50 @@
+.allIconsWrapper {
+  max-width: 100vw;
+  overflow-y: auto;
+  max-height: 80vh;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 100px);
+  gap: 15px;
+
+  .tempSVGIcon {
+    font-size: 0.5rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+    overflow: hidden;
+    padding: 6px;
+
+    .iconLabel {
+      position: absolute;
+      top: 6px;
+      right: 6px;
+    }
+
+    .copyLayer {
+      background-color: hsl(207deg 90% 54% / 30%);
+      opacity: 0;
+      top: 0;
+      left: 0;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: grid;
+      place-items: center;
+      transition: opacity 0.2s;
+      color: hsl(0, 0%, 0%);
+      font-weight: 900;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    svg {
+      width: 80px;
+      height: auto;
+    }
+  }
+}

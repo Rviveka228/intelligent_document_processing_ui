@@ -1,0 +1,23 @@
+@import '../../Styles/controls';
+.tooltipInner {
+  @include column-gap(0.5rem);
+  @extend %flexbox;
+  @extend %item-center;
+  span {
+    @include flex(0, 0, auto);
+    &:last-child {
+      min-width: 16px;
+      max-width: 16px;
+      min-height: 16px;
+      max-height: 16px;
+      @extend %flexbox;
+      @extend %all-center;
+      svg {
+        width: 100%;
+        path {
+          fill: theme-colors('secondary', 'base');
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+@import '../../../../Styles/controls';
+.addUser {
+  padding: 1rem;
+  @include row-gap(1.5rem);
+  @extend %flex-column;
+  li {
+    @include flex(0, 1, auto);
+    @include row-gap(0.25rem);
+    @extend %flex-column;
+  }
+}

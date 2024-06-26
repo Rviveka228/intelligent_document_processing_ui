@@ -1,0 +1,12 @@
+@import '../../Styles/controls';
+
+.labelWrapper {
+  @extend %flexbox;
+  @extend %item-center;
+  @include row-gap(4px);
+  &__label {
+    min-width: 30%;
+    @include flex(1, 1, auto);
+    @extend %flex-column;
+  }
+}

@@ -1,0 +1,215 @@
+@import '../../Styles/controls';
+.selectBlock {
+  @extend %flex-column;
+  :global {
+    .ant-select {
+      position: relative;
+      @include flexbox();
+      @include flex-direction(column);
+      .ant-select-arrow {
+        cursor: pointer;
+        padding: 0;
+        right: 2px;
+        inset-inline-end: 0 !important;
+        margin: 0 !important;
+        margin-top: 2px !important;
+        @include flexbox();
+        @include flex-direction(row);
+        @include justify-content(center);
+        @include align-items(center);
+        @include transform(translate(0, -50%));
+        .anticon {
+          width: 21px;
+          margin-left: 0px;
+          font-size: 14px;
+        }
+        .anticon-spin {
+          width: 14px;
+          margin-right: 6px;
+        }
+      }
+      .ant-select-clear {
+        right: 10px;
+        top: 55%;
+        width: 1rem;
+        height: 1rem;
+      }
+      &.ant-select-focused {
+        background-color: transparent;
+        &:not(.ant-select-disabled),
+        &:not(.ant-select-customize-input) {
+          margin: 0;
+          .ant-select-selector {
+            @include box-shadow(0, 0, 0, 0, transparent !important);
+          }
+        }
+      }
+      &.ant-select-single,
+      &.ant-select-multiple {
+        min-width: 180px;
+        @include transition(all 0.4s ease-in-out);
+        &:not(.ant-select-customize-input) {
+          margin: 0;
+          .ant-select-selector {
+            flex: 1 1 auto;
+            border: $border;
+            font-size: 0.875rem;
+            max-width: 100%;
+            min-width: 110px;
+            @include flexbox();
+            @include flex-direction(row);
+            @include align-items(center);
+            @include border-radius(0.25rem);
+            @include transition(all 0.4s ease-in-out);
+            .ant-select-selection-placeholder {
+              max-width: 100%;
+              padding-right: 20px;
+              flex: 1 1 auto;
+              left: 1rem;
+              color: theme-colors('grays', 'gray-8');
+              .ant-select-selection-item {
+                flex: 0 0 auto;
+                font-size: 0.875rem;
+                font-weight: 400;
+                line-height: 1;
+                &:hover {
+                  @include transition(all 0.4s ease-in-out);
+                }
+              }
+              .ant-select-loader {
+                width: 16px;
+                height: 16px;
+                position: absolute;
+                right: 0px;
+                top: 8px;
+              }
+            }
+          }
+        }
+        .anticon {
+          color: theme-colors('grays', 'gray-4');
+        }
+        &.ant-select-disabled {
+          margin: 0;
+          &:not(.ant-select-customize-input) {
+            margin: 0;
+            .ant-select-selector {
+            }
+          }
+        }
+      }
+      &.ant-select-single {
+        @include transition(all 0.4s ease-in-out);
+        &:not(.ant-select-customize-input) {
+          margin: 0;
+          .ant-select-selector {
+            padding: 0.5rem;
+            height: $form-item-md;
+            border: $border;
+            @include media('>=desktop') {
+              height: $form-item-md;
+            }
+            .ant-select-selection-placeholder,
+            .ant-select-selection-search {
+              margin: 0;
+              left: 1rem;
+              .ant-select-selection-search-input {
+                width: 100%;
+                height: 100%;
+              }
+            }
+          }
+        }
+      }
+      &.ant-select-multiple {
+        @include transition(all 0.4s ease-in-out);
+        &:not(.ant-select-customize-input) {
+          margin: 0;
+          .ant-select-selector {
+            padding-right: 1.5rem;
+            min-height: $form-item-md;
+            @include media('>=desktop') {
+              min-height: $form-item-md;
+            }
+            .ant-select-selection-overflow {
+              @include flexbox();
+              @include flex-direction(row);
+              @include align-items(center);
+              .ant-select-selection-overflow-item {
+                @include flexbox();
+                @include flex-direction(column);
+                .ant-select-selection-item {
+                  margin: 2px;
+                  padding: 0 8px;
+                  border: $border;
+                  @include border-radius(0.25rem);
+                }
+              }
+            }
+          }
+        }
+      }
+      &.ant-select-lg {
+        @include transition(all 0.4s ease-in-out);
+        &:not(.ant-select-customize-input) {
+          flex: 1 1 auto;
+          .ant-select-selector {
+            height: $form-item-lg;
+            font-size: 16px;
+            padding: 0.75rem 1.5rem;
+            @include border-radius(0.5rem);
+          }
+        }
+      }
+      &.ant-select-sm {
+        @include transition(all 0.4s ease-in-out);
+        &:not(.ant-select-customize-input) {
+          flex: 1 1 auto;
+          .ant-select-selector {
+            height: $form-item-sm;
+            font-size: 14px;
+            padding: 0.25rem 0.75rem;
+            @include border-radius(0.25rem);
+          }
+        }
+      }
+      &:hover {
+        @include transition(all 0.4s ease-in-out);
+        .ant-select-selector {
+          border-color: theme-colors('secondary', 'base');
+        }
+        &:not(.ant-select-disabled):not(.ant-select-customize-input):not(
+            .ant-pagination-size-changer
+          ):hover
+          .ant-select-selector {
+          border-color: theme-colors('secondary', 'base');
+        }
+      }
+    }
+    .ant-select-dropdown {
+      padding: 0;
+      @include border-radius(10px);
+      .rc-virtual-list {
+        flex: 1 1 auto;
+      }
+      .ant-select-item {
+        font-size: 14px;
+        margin-block: 0.25rem;
+        padding: 0.25rem 1rem;
+        &.ant-select-item-option-selected {
+          color: theme-colors('grays', 'gray-8');
+          background-color: theme-colors('grays', 'gray-2');
+        }
+      }
+      .ant-cascader-menus {
+        padding: 0;
+        min-width: 300px !important;
+        .ant-cascader-menu {
+          margin: 0 !important;
+          min-width: 250px !important;
+          padding: 10px 0 !important;
+        }
+      }
+    }
+  }
+}

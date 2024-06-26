@@ -1,0 +1,140 @@
+@import '../../Styles/controls';
+.emptyState {
+  @include flex(1, 1, auto);
+  flex-grow: 1;
+  @extend %flexbox;
+  @extend %all-center;
+  @include media('>=834px', '<desktop') {
+    min-height: calc(100vh - 200px);
+  }
+  @supports (-webkit-touch-callout: none) and (not (translate: none)) {
+    min-height: calc(100vh - 200px);
+  }
+  .stateContent {
+    row-gap: 40px;
+    @extend %flex-column;
+    @extend %all-center;
+    .stateToppane {
+      @extend %flex-column;
+      .emptyImage {
+        @include flex(0, 0, auto);
+        max-width: 100px;
+        @extend %flex-column;
+        @extend %all-center;
+        @include media('>=desktop') {
+          max-width: 180px;
+        }
+
+        span {
+          @include flex(1, 1, auto);
+        }
+      }
+    }
+    .stateContentpane {
+      row-gap: 12px;
+      max-width: 300px;
+      @extend %flex-column;
+      @extend %all-center;
+      h3 {
+        font-size: 14px;
+        margin: 0;
+        column-gap: 8px;
+        font-weight: 600;
+        text-align: center;
+        // color: $color-text-heading;
+        @extend %flexbox;
+        @extend %item-center;
+        @include media('>=desktop') {
+          font-size: 16px;
+        }
+        .emptyIconprogress {
+          min-width: 20px;
+          min-height: 20px;
+          max-width: 20px;
+          max-height: 20px;
+          @extend %flexbox;
+          @extend %all-center;
+        }
+      }
+      p {
+        font-size: 14px;
+        text-align: center;
+        line-height: 20px;
+        // color: $color-text-subhead;
+      }
+    }
+  }
+  &.stateextrasmall {
+    @include flex(1, 1, auto);
+    .stateContent {
+      @include flex(0, 0, auto);
+      .emptyImage {
+        max-width: 50px;
+        @include media('>=desktop') {
+          max-width: 60px;
+        }
+      }
+      h3 {
+        font-size: 13px;
+        @include media('>=desktop') {
+          font-size: 14px;
+        }
+      }
+      p {
+        font-size: 14px;
+        font-size: 13px;
+        @include media('>=desktop') {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  &.statesmall {
+    @include flex(1, 1, auto);
+    .stateContent {
+      @include flex(0, 0, auto);
+      .emptyImage {
+        max-width: 60px;
+        @include media('>=desktop') {
+          max-width: 80px;
+        }
+      }
+      h3 {
+        font-size: 14px;
+        @include media('>=desktop') {
+          font-size: 16px;
+        }
+      }
+      p {
+        font-size: 14px;
+        @include media('>=desktop') {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  &.statelarge {
+    @include flex(1, 1, auto);
+    .stateContent {
+      @include flex(0, 0, auto);
+      .emptyImage {
+        max-width: 140px;
+        @include media('>=desktop') {
+          max-width: 280px;
+        }
+      }
+      h3 {
+        font-size: 18px;
+        @include media('>=desktop') {
+          font-size: 22px;
+        }
+      }
+      p {
+        font-size: 14px;
+        @include media('>=desktop') {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}

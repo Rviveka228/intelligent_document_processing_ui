@@ -1,0 +1,30 @@
+@import '../../../Styles/controls';
+.tableControls {
+  @include flex(0, 0, auto);
+  @include column-gap(0.75rem);
+  @extend %flexbox;
+  @extend %item-center;
+}
+.tableButton {
+  @include flex(0, 0, auto);
+  button {
+    @include flex(0, 0, auto);
+    path {
+      fill: theme-colors('grays', 'gray-4') !important;
+      @extend %isIn;
+    }
+    &:hover {
+      @include flex(0, 0, auto);
+      path {
+        fill: theme-colors('grays', 'gray-8') !important;
+        @extend %isIn;
+      }
+    }
+  }
+}
+.tableSelectbox {
+  @include flex(1, 1, auto);
+  max-width: 100px;
+  min-width: 180px;
+  @include flex(0, 0, auto);
+}

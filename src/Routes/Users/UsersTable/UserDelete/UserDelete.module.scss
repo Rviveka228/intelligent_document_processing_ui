@@ -1,0 +1,22 @@
+@import '../../../../Styles/controls';
+.deleteIcon {
+  display: inline-block;
+  cursor: pointer;
+  min-width: 16px;
+  max-width: 16px;
+  overflow: hidden;
+  svg {
+    height: 100%;
+    path {
+      fill: theme-colors('grays', 'gray-4');
+      @extend %isIn;
+    }
+  }
+  &:hover {
+    display: inline-block;
+    path {
+      fill: theme-colors('functional', 'error');
+      @extend %isIn;
+    }
+  }
+}

@@ -1,0 +1,106 @@
+@import '../../Styles/controls';
+.ant-pagination {
+  flex: 0 0 auto;
+  @extend %flexbox;
+  @extend %item-center;
+  .ant-pagination-item,
+  .ant-pagination-prev,
+  .ant-pagination-next {
+    border: 0;
+    flex: 0 0 auto;
+    padding: 0px;
+    margin: 0;
+    overflow: hidden;
+    background-color: transparent;
+    border: 0;
+
+    @extend %flexbox;
+    @extend %all-center;
+    @include transition(all 0.8s ease-in-out);
+    a {
+      flex: 1 1 auto;
+      padding: 0 !important;
+      @extend %flexbox;
+      @extend %all-center;
+      @extend %isIn;
+    }
+    &:hover {
+      border: 0;
+      @extend %isIn;
+      a {
+        font-weight: 400;
+        @extend %isIn;
+      }
+    }
+    &.ant-pagination-disabled {
+      padding: 0;
+      a {
+        font-weight: 400;
+        &:hover {
+          font-weight: 400;
+        }
+      }
+    }
+    &.ant-pagination-item-active {
+      border: 0;
+      border: 0;
+      a {
+        color: theme-colors('secondary', 'base');
+        font-weight: 700;
+      }
+    }
+  }
+  .ant-pagination-prev,
+  .ant-pagination-next {
+    width: auto;
+    height: auto;
+    padding: 0;
+    a {
+      width: auto;
+      height: auto;
+      font-size: 16px;
+      font-weight: 700;
+
+      @extend %flexbox;
+      @extend %all-center;
+      &:hover {
+        font-weight: 700;
+      }
+    }
+    .ant-pagination-item-link {
+      border: 0;
+      background-color: transparent;
+    }
+  }
+  .ant-pagination-item {
+    height: 30px;
+    a {
+      flex: 0 0 auto;
+      height: 30px;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 30px;
+      margin: 0px;
+
+      padding: 0px 8px;
+      background-color: transparent;
+      border: 0;
+      @extend %flexbox;
+      @extend %all-center;
+      @extend %isOut;
+      &:hover {
+        @extend %isIn;
+      }
+    }
+  }
+  .ant-pagination-options {
+    flex: 0 0 auto;
+    margin-left: 1rem;
+  }
+  .ant-pagination-total-text {
+    margin-right: auto;
+    font-size: 14px;
+    margin-right: 1rem;
+    text-transform: capitalize;
+  }
+}

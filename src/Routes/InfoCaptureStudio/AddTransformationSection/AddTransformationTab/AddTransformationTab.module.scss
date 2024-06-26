@@ -1,0 +1,20 @@
+@import '../../../../Styles/controls';
+
+.keyvaultDetails {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border: $line;
+  @extend %flex-column;
+  @extend %isIn;
+  h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: theme-colors('grays', 'gray-8');
+  }
+}
+.active {
+  background: theme-colors('secondary', 'base');
+  h4 {
+    color: white !important;
+  }
+}

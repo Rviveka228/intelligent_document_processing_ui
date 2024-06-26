@@ -1,0 +1,28 @@
+@import '../../../Styles/controls';
+.controlWrapper {
+  @extend %flex-column;
+  .controlBody {
+    padding-right: 10px;
+    @include row-gap(1rem);
+    @extend %flex-column;
+    .feedTitle {
+      @extend %flexbox;
+      @extend %justify-between;
+      @extend %item-center;
+      &__failedStatus {
+        border: 1px solid #d63e39;
+        color: #d63e39;
+        background-color: hsl(2deg 66% 53%/10%);
+        padding: 2px 4px;
+        border-radius: 6px;
+      }
+      &__successStatus {
+        border: 1px solid #368541;
+        color: #368541;
+        background-color: hsl(2deg 66% 53%/10%);
+        padding: 2px 4px;
+        border-radius: 6px;
+      }
+    }
+  }
+}

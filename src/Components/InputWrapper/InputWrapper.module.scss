@@ -1,0 +1,19 @@
+@import '../../Styles/controls';
+
+.inputWrapper {
+  @include flexbox();
+  @include flex-direction(column);
+  position: relative;
+  &__label {
+    font-size: 14px;
+    color: theme-colors('grays', 'gray-6');
+  }
+  &__error {
+    color: theme-colors('functional', 'error');
+    opacity: 0.85;
+    font-size: 0.8rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}

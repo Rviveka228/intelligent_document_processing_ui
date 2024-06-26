@@ -1,0 +1,10 @@
+@import '../../../Styles/controls';
+
+.addBlockTypeWrapper {
+  @extend %flex-column;
+  padding: 1rem;
+  .addBlockTypeList {
+    @extend %flex-column;
+    @include row-gap(1.5rem);
+  }
+}

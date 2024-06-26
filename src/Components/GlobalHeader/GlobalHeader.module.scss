@@ -1,0 +1,30 @@
+@import '../../Styles/controls';
+.globalHeader {
+  z-index: 999;
+  padding: 2rem 1rem;
+  @extend %flex-column;
+  @extend %justify-center;
+  @extend %isIn;
+  .headerBlock {
+    flex: 1 1 auto;
+    column-gap: 0.5rem;
+    @extend %flexbox;
+    @extend %item-center;
+    @extend %justify-between;
+    .brandBlock {
+      @include column-gap(0.5rem);
+      @extend %flexbox;
+      @extend %item-center;
+      .brandLogo {
+        cursor: pointer;
+        min-width: 150px;
+        max-width: 150px;
+        @extend %flexbox;
+        @extend %all-center;
+        svg {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

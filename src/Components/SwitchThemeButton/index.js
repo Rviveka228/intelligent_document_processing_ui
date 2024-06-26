@@ -1,0 +1,1 @@
+export {SwitchThemeButton} from './SwitchThemeButton';

@@ -1,0 +1,1 @@
+export {BlockTagContent} from './BlockTagContent';

@@ -1,0 +1,90 @@
+@import '../../../Styles/controls';
+
+.documentCreateTypeWrapper {
+  @include flex(1, 1, auto);
+  @include row-gap(1rem);
+  @extend %flex-column;
+  .documentCreateTypeBlock {
+    @include flex(0, 0, auto);
+    @include row-gap(1rem);
+    padding: 1rem;
+    &__name {
+      @extend %flex-column;
+      @include row-gap(0.5rem);
+      width: 500px;
+    }
+
+    .fieldAddWrapper {
+      @include flex(0, 0, auto);
+      @include row-gap(2rem);
+      h3 {
+        font-size: 16px;
+        font-weight: 500;
+        color: theme-colors('primary', 'dark');
+      }
+      .fieldAdd {
+        position: relative;
+        @include row-gap(0.75rem);
+        @extend %flex-column;
+        .fieldAddList {
+          @include row-gap(1rem);
+          @include flex(0, 0, auto);
+          @extend %flex-column;
+          @include media('>=tablet') {
+            display: grid;
+            grid-template-rows: 1fr;
+            @include row-gap(1rem);
+            @include column-gap(1rem);
+            grid-template-columns: repeat(auto-fill, calc(50% - 0.75rem));
+          }
+          @include media('>=desktop') {
+            grid-template-columns: repeat(auto-fill, calc(33.333% - 0.75rem));
+          }
+          @include media('>=1200px') {
+            grid-template-columns: repeat(auto-fill, calc(33.333% - 0.75rem));
+          }
+          @include media('>=1400px') {
+            grid-template-columns: repeat(auto-fill, calc(25% - 0.75rem));
+          }
+          li {
+            @extend %flex-column;
+          }
+        }
+        .addCard {
+          @include flex(1, 1, auto);
+          @extend %flex-column;
+          @extend %all-center;
+          .addTrigger {
+            padding-block: 1rem;
+            @include row-gap(1rem);
+            @extend %flex-column;
+            @extend %all-center;
+            h3 {
+              font-size: 20px;
+              font-weight: 300;
+            }
+            .triggerButton {
+              cursor: pointer;
+              background-color: theme-colors('functional', 'success', 0.3);
+              min-width: 60px;
+              max-width: 60px;
+              min-height: 60px;
+              max-height: 60px;
+              @extend %flex-column;
+              @extend %all-center;
+              @extend %radius-round;
+              svg {
+                width: 40%;
+                @extend %flex-column;
+                @extend %all-center;
+                path {
+                  fill: theme-colors('grays', 'gray-6');
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

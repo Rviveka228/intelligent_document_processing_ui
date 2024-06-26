@@ -1,0 +1,24 @@
+@import '../../Styles/controls';
+
+.settingsWrapper {
+  @extend %flex-column;
+  @include row-gap(3rem);
+
+  .settingsBlock {
+    @extend %flex-column;
+    .settingsInner {
+      width: 100%;
+      max-width: 750px;
+      margin-inline: auto;
+      @include flex(1, 1, auto);
+      .settingsCard {
+        padding: 1rem;
+        @extend %flex-column;
+        .settingsList {
+          @extend %flex-column;
+          @include row-gap(1rem);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,155 @@
+@import '../constants/mixins';
+%inline-flex {
+  @include inline-flex;
+}
+%flexbox {
+  @include flexbox();
+  @include flex-direction(row);
+}
+%flex-column {
+  @include flexbox();
+  @include flex-direction(column);
+}
+%row-reverse {
+  @include flex-direction(row-reverse);
+}
+%column-reverse {
+  @include flex-direction(column-reverse);
+}
+%all-center {
+  @include justify-content(center);
+  @include align-items(center);
+}
+
+%justify-center {
+  @include justify-content(center);
+}
+
+%justify-between {
+  @include justify-content(space-between);
+}
+
+%justify-around {
+  @include justify-content(space-around);
+}
+
+%justify-start {
+  @include justify-content(flex-start);
+}
+
+%justify-end {
+  @include justify-content(flex-end);
+}
+
+%item-center {
+  @include align-items(center);
+}
+
+%item-start {
+  @include align-items(flex-start);
+}
+
+%item-end {
+  @include align-items(flex-end);
+}
+
+%item-stretch {
+  @include align-items(stretch);
+}
+
+%item-nowrap {
+  @include flex-wrap(nowrap);
+}
+
+%item-wrap {
+  @include flex-wrap(wrap);
+}
+
+%break-text {
+  overflow-wrap: break-word;
+  word-break: break-all;
+  hyphens: manual;
+  white-space: normal;
+}
+%radius-none {
+  @include border-radius(0);
+}
+%radius-left {
+  @include border-radius(0.25rem 0 0 0.25rem);
+}
+%radius-right {
+  @include border-radius(0 0.25rem 0.25rem 0);
+}
+%radius-xs {
+  @include border-radius(0.125rem);
+}
+%radius-sm {
+  @include border-radius(0.25rem);
+}
+%radius-md {
+  @include border-radius(0.375rem);
+}
+%radius-lg {
+  @include border-radius(0.5rem);
+}
+%radius-xl {
+  @include border-radius(0.625rem);
+}
+%radius-xxl {
+  @include border-radius(0.75rem);
+}
+%radius-full {
+  @include border-radius(3.125rem);
+}
+%radius-round {
+  @include border-radius(50%);
+}
+%isIn {
+  @include transition(all 0.4s ease-in-out);
+}
+%isOut {
+  @include transition(all 0.8s ease-in-out);
+}
+%shadow-one {
+  @include box-shadow(
+    0 4px 8px 0 theme-colors('grays', 'gray-7', 0.08),
+    0 -1px 2px 0 theme-colors('grays', 'gray-7', 0.1)
+  );
+}
+%shadow-two {
+  @include box-shadow(0px 4px 8px theme-colors('grays', 'gray-7', 0.1));
+  transform: translateZ(0);
+  will-change: transform;
+  transition: box-shadow 0.3s ease;
+}
+%shadow-hover {
+  @include box-shadow(0px 10px 0 theme-colors('grays', 'gray-9', 0.2));
+  transform: translateZ(0);
+  will-change: transform;
+  transition: box-shadow 0.3s ease;
+}
+%page-bg {
+  @include linear-gradient(
+    to bottom,
+    theme-colors('secondary', 'light'),
+    theme-colors('grays', 'gray-0') 400px
+  );
+}
+%scrollbar-off {
+  @include scrollbar(0px);
+}
+%scrollbar-xs {
+  @include scrollbar(2px);
+}
+
+%scrollbar-sm {
+  @include scrollbar(4px);
+}
+
+%scrollbar-md {
+  @include scrollbar();
+}
+
+%scrollbar-lg {
+  @include scrollbar(8px);
+}

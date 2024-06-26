@@ -1,0 +1,17 @@
+@import '../../../Styles/controls';
+.dataDetails {
+  @extend %flex-column;
+  &__list {
+    @extend %flexbox;
+    @include column-gap(1.5rem);
+    li {
+      height: 24px;
+      padding: 0.15rem 1rem;
+      background-color: theme-colors('grays', 'gray-0');
+      border: $line;
+      @extend %flex-column;
+      @extend %all-center;
+      @extend %radius-full;
+    }
+  }
+}
